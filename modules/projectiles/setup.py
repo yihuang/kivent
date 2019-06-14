@@ -69,7 +69,7 @@ elif platform == 'darwin':
     if v[2] >= '13.0.0':
         import platform as _platform
 
-        xcode_dev = check_output('xcode-select -p').decode().strip()
+        xcode_dev = check_output(['xcode-select', '-p']).decode().strip()
         sdk_mac_ver = '.'.join(_platform.mac_ver()[0].split('.')[:2])
         sysroot = join(xcode_dev,
                        'Platforms/MacOSX.platform/Developer/SDKs',
